@@ -1,7 +1,7 @@
 // components
 import FirstComponent from '../components/FirstComponent'
 import TemplateExpressions from '../components/TemplateExpressions'
-
+import Events from '../components/Events'
 //styles / CSS
 import { useState } from 'react'
 import './App.css'
@@ -18,10 +18,8 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <Events/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
