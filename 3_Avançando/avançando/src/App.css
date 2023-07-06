@@ -18,6 +18,17 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.TituloCarrosNovos {
+  color: cadetblue;
+  background-color:black;
+}
+
+.CarrosNovos {
+  color: black;
+  background-color: aqua;
+}
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

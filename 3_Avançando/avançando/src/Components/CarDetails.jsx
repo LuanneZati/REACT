@@ -1,14 +1,19 @@
-const CarDatails = ({brand, km, color}) => {
+import React from "react";
+const CarDetails = ({brand, km, color, novo}) => {
   return (
-    <div>
-        <h1>Detalhes do carro</h1>
-        <ul>
-            <li>Marca: {brand}</li>
-            <li>KM: {km}</li>
-            <li>Cor: {color}</li>
-        </ul>
+    <div className="CarrosNovos">
+      {novo ? (
+          <div >
+            <h2>Detalhes do carro</h2>
+            <ul>
+              <li>Marca: {brand}</li>
+              <li>KM: {km}</li>
+              <li>Cor: {color}</li>
+            </ul>
+          </div>
+      ) : ("")}
     </div>
-  )
-}
+  );
+};
 
-export default CarDatails;
+export default CarDetails;

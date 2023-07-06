@@ -21,7 +21,12 @@ function App() {
         {/* props */}
         <ShowUsername name={use} age='20'/>
         {/*Destructing*/}
-        <CarDetails brand="VW" km={100000} color="prata"/>
+        <CarDetails brand="VW" km={100000} color="prata" novo={false}/>
+        {/*Reaproveitando*/}
+        <h1 className='TituloCarrosNovos'>Carros novos</h1>
+        <CarDetails brand="honda" km={1000} color="preto" novo={true}/>
+        <CarDetails brand="mercedes" km={5000} color="preto" novo={true}/>
+        <CarDetails brand="tesla" km={50000} color="preto" novo={false}/>
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />
