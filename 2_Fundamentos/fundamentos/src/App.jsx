@@ -2,6 +2,8 @@
 import FirstComponent from '../components/FirstComponent'
 import TemplateExpressions from '../components/TemplateExpressions'
 import Events from '../components/Events'
+import Challenge from '../components/Challenge'
+
 //styles / CSS
 import { useState } from 'react'
 import './App.css'
@@ -19,6 +21,7 @@ function App() {
           count is {count}
         </button>
         <Events/>
+        <Challenge/>
       </div>
     </>
   )
