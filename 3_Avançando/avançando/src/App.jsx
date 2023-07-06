@@ -4,6 +4,7 @@ import ManageData from './Components/ManageData'
 import ListRender from './Components/ListRender'
 import ConditionalRender from './Components/ConditionalRender'
 import ShowUsername from './Components/ShowUsername'
+import CarDetails from './Components/CarDetails'
 import { useState } from 'react'
 
 function App() {
@@ -12,10 +13,15 @@ function App() {
     <>
       <div>
         <h1>Avançando em React</h1>
+        {/* useState */}
         <ManageData/>
         <ListRender/>
+        {/* conditions */}
         <ConditionalRender/>
-        <ShowUsername name={use}age='20' />
+        {/* props */}
+        <ShowUsername name={use} age='20'/>
+        {/*Destructing*/}
+        <CarDetails brand="VW" km={100000} color="prata"/>
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />
