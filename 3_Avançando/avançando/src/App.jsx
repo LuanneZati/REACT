@@ -3,7 +3,11 @@ import City from './assets/city.jpg'
 import ManageData from './Components/ManageData'
 import ListRender from './Components/ListRender'
 import ConditionalRender from './Components/ConditionalRender'
+import ShowUsername from './Components/ShowUsername'
+import { useState } from 'react'
+
 function App() {
+  const [use] = useState("Laura")
   return (
     <>
       <div>
@@ -11,6 +15,7 @@ function App() {
         <ManageData/>
         <ListRender/>
         <ConditionalRender/>
+        <ShowUsername name={use}age='20' />
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />
