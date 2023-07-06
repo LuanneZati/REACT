@@ -1,5 +1,6 @@
 // components
 import FirstComponent from '../components/FirstComponent'
+import TemplateExpressions from '../components/TemplateExpressions'
 
 //styles / CSS
 import { useState } from 'react'
@@ -13,6 +14,7 @@ function App() {
       <div className="card">
         <h1>Fundamentos React</h1>
         <FirstComponent />
+        <TemplateExpressions/>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
