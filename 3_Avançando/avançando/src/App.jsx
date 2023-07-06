@@ -2,7 +2,7 @@ import './App.css'
 import City from './assets/city.jpg'
 import ManageData from './Components/ManageData'
 import ListRender from './Components/ListRender'
-
+import ConditionalRender from './Components/ConditionalRender'
 function App() {
   return (
     <>
@@ -10,6 +10,7 @@ function App() {
         <h1>Avançando em React</h1>
         <ManageData/>
         <ListRender/>
+        <ConditionalRender/>
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />
