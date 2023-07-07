@@ -7,6 +7,7 @@ import ShowUsername from './Components/ShowUsername'
 import CarDetails from './Components/CarDetails'
 import Fragment from './Components/Fragment'
 import Container from './Components/Container'
+import ExecuteFunction from './Components/ExecuteFunction'
 
 import { useState } from 'react'
 
@@ -18,6 +19,10 @@ function App() {
     {id: 2, brand: "BMW", color: "white", novo:true, km:0},
     {id: 3, brand: "mercedes", color: "pink", novo:true, km:100}
   ]
+
+  function showMessages() {
+    console.log("Evento do componente pai")
+  }
   return (
     <>
       <div>
@@ -39,6 +44,7 @@ function App() {
         {/*loop em array de objetos*/}
         {cars.map((car) => (
           <CarDetails 
+          key={car.id}
           brand={car.brand} 
           color={car.color} 
           km={car.km} 
@@ -51,6 +57,9 @@ function App() {
         <Container myValue="teste">
           <p>Esse é o conteúdo</p>
         </Container>
+        {/*Executar função*/}
+        <ExecuteFunction myFunction={showMessages} />
+
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />
