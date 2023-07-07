@@ -6,6 +6,7 @@ import ConditionalRender from './Components/ConditionalRender'
 import ShowUsername from './Components/ShowUsername'
 import CarDetails from './Components/CarDetails'
 import Fragment from './Components/Fragment'
+import Container from './Components/Container'
 
 import { useState } from 'react'
 
@@ -46,7 +47,10 @@ function App() {
         ))}
         {/*Fragments*/}
         <Fragment propTest="teste"/>
-        
+        {/*children*/}
+        <Container myValue="teste">
+          <p>Esse é o conteúdo</p>
+        </Container>
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />
