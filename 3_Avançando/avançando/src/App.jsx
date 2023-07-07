@@ -10,6 +10,7 @@ import Container from './Components/Container'
 import ExecuteFunction from './Components/ExecuteFunction'
 import Message from './Components/Message'
 import ChangeMessageState from './Components/ChangeMessageState'
+import UserDetails from './Components/UserDetails'
 
 import { useState } from 'react'
 
@@ -20,6 +21,12 @@ function App() {
     {id: 1, brand: "Ferrari", color: "black", novo:false, km:5000},
     {id: 2, brand: "BMW", color: "white", novo:true, km:0},
     {id: 3, brand: "mercedes", color: "pink", novo:true, km:100}
+  ]
+
+  const people = [
+    {id: 1, name: "Ana", age: 15, job: "Jovem aprendiz"},
+    {id: 2, name: "Bia", age: 25, job: "Medica"},
+    {id: 3, name: "Carol", age: 12, job: "Estudante"}
   ]
 
   const [message, setMessage] = useState("Bem vindo!");
@@ -58,7 +65,7 @@ function App() {
           km={car.km} 
           novo={car.novo} 
           />
-        ))}
+        ))};
         {/*Fragments*/}
         <Fragment propTest="teste"/>
         {/*children*/}
@@ -70,7 +77,19 @@ function App() {
         {/*Statelift*/}
         <Message msg={message} />
         <ChangeMessageState handleMessage={handleMessage} />
-
+        
+        <h1>Challenge 4</h1>
+        {people.map((person) => (
+          <UserDetails 
+          key={person.id} 
+          name={person.name} 
+          age={person.age} 
+          job={person.job}
+          />
+        ))};
+        
+        
+        
         {/*Imagem em public */}
         <div> 
           <img src="/img1.jpg" alt="Paisagem" />

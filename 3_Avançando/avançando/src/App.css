@@ -28,6 +28,15 @@
   background-color:darkorchid;
 }
 
+.DataUsers {
+  color: black;
+  background-color:deepskyblue;
+}
+
+.DataUsersBody {
+  color: black;
+  background-color:darkorchid;
+}
 
 @keyframes logo-spin {
   from {
