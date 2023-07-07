@@ -8,6 +8,8 @@ import CarDetails from './Components/CarDetails'
 import Fragment from './Components/Fragment'
 import Container from './Components/Container'
 import ExecuteFunction from './Components/ExecuteFunction'
+import Message from './Components/Message'
+import ChangeMessageState from './Components/ChangeMessageState'
 
 import { useState } from 'react'
 
@@ -19,6 +21,12 @@ function App() {
     {id: 2, brand: "BMW", color: "white", novo:true, km:0},
     {id: 3, brand: "mercedes", color: "pink", novo:true, km:100}
   ]
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
 
   function showMessages() {
     console.log("Evento do componente pai")
@@ -59,6 +67,9 @@ function App() {
         </Container>
         {/*Executar função*/}
         <ExecuteFunction myFunction={showMessages} />
+        {/*Statelift*/}
+        <Message msg={message} />
+        <ChangeMessageState handleMessage={handleMessage} />
 
         {/*Imagem em public */}
         <div> 
