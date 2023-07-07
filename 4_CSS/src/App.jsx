@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import MyComponent from './Components/MyComponent'
 
 function App() {
+  const n = 15
   return (
     <>
       <div>
@@ -15,6 +14,9 @@ function App() {
         <p>Parágrafo do App.jsx</p>
         {/*Inline CSS*/}
         <p style={{color: "red", padding:"25px", borderTop:"2px solid green"}}>Esse elemento foi estilizado de forma inline</p>
+        {/*Inline dinamico*/}
+        <p style={n<10 ? ({color: "purple"}) : ({color:"pink"})}>CSS dinâmico</p>
+        <p style={name === "Luanne" ? {color: "green", backgroundColor: "#000"} : null}>Nome dinâmico</p>
       </div>
     </>
   )
