@@ -22,7 +22,7 @@ function App() {
     {id: 3, brand: "mercedes", color: "pink", novo:true, km:100}
   ]
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("Bem vindo!");
 
   const handleMessage = (msg) => {
     setMessage(msg);
