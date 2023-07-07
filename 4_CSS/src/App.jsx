@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import './App.css'
 import MyComponent from './Components/MyComponent'
+import Title from './Components/Title'
 
 function App() {
   const n = 15
@@ -21,11 +21,10 @@ function App() {
         <p style={name === "Luanne" ? {color: "green", backgroundColor: "#000"} : null}>Nome dinâmico</p>
         {/*Classe dinâmica*/}
         <h2 className={redTitle ? "red-title" : "title"}>Este titulo vai ter classe dinamica</h2>
-
-
-
-
-
+        {/*CSS modules*/}
+        <Title/>
+        <h2 className="myTitle">Teste</h2>
+        
       </div>
     </>
   )
