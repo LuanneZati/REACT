@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.red-title {
+  background-color: black;
+  color: red;
+  padding: 15px;
+  border: 5px solid red;
+}
+
+.title {
+  background-color: black;
+  color: white;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
