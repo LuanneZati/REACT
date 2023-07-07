@@ -5,6 +5,8 @@ import ListRender from './Components/ListRender'
 import ConditionalRender from './Components/ConditionalRender'
 import ShowUsername from './Components/ShowUsername'
 import CarDetails from './Components/CarDetails'
+import Fragment from './Components/Fragment'
+
 import { useState } from 'react'
 
 function App() {
@@ -42,8 +44,8 @@ function App() {
           novo={car.novo} 
           />
         ))}
-        
-        
+        {/*Fragments*/}
+        <Fragment propTest="teste"/>
         
         {/*Imagem em public */}
         <div> 
