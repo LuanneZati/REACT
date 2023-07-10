@@ -10,15 +10,15 @@ const MyForm = ({user}) => {
     setName(e.target.value)
   }
 
-  const [bio, setBio] = useState("")
+  const [bio, setBio] = useState(user ? user.bio : "")
   //console.log(name);
   //console.log(email);
   
-
+  const [role, setRole] = useState(user ? user.role :  "")
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Enviando o formulário")
-    console.log(name, email, bio)
+    console.log(name, email, bio, role)
     setName("");
     setEmail("");
     setBio("");
@@ -45,7 +45,7 @@ const MyForm = ({user}) => {
              />
             {/**label envolvendo input */}
             <label>
-                <span>E-mail</span>
+                <span>E-mail </span>
                 <input 
                 type="email" 
                 name='email' 
@@ -54,24 +54,28 @@ const MyForm = ({user}) => {
                 value = {email}
                 />
             </label>
-              <span>
-                <textarea 
-                name="bio" 
-                placeholder='Descrição do usuário' 
-                onChange={(e) => setBio(e.target.value)} 
-                value={bio} 
-                id="" 
-                cols="30" 
-                rows="10">
-
-                </textarea>
-
-              </span>
-            
-              <input 
-              type="submit" 
-              value="Enviar" 
-              />
+            <span>Bio </span>
+            <textarea 
+              name="bio" 
+              placeholder='Descrição do usuário' 
+              onChange={(e) => setBio(e.target.value)} 
+              value={bio} 
+              id="" 
+              cols="30" 
+              rows="10">
+            </textarea>
+            <label>
+              <span>Função no sistema</span>
+              <select name="role" id="" onChange={(e) => setRole(e.target.value)}>
+                <option value="user">Usuário</option>
+                <option value="editor">Editor</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </label>
+            <input 
+            type="submit" 
+            value="Enviar" 
+            />
         </form>
     </div>
   )
