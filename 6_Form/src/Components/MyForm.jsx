@@ -18,7 +18,10 @@ const MyForm = ({user}) => {
     event.preventDefault();
     console.log("Enviando o formulário")
     console.log(name, email)
+    setName("");
+    setEmail("");
   }
+
   return (
     <div>
       {/**envio de form */}
