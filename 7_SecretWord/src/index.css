@@ -1,15 +1,38 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 1);
   background-color: #242424;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+html, body {
+  height: 100%;
+}
+
+body {
+  color-scheme: light dark;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+  180deg, 
+  rgba(100,35,100,1) 0%, 
+  rgba(0,0,0,1) 100%
+  );
+}
+
+button {
+  background-color:blueviolet;
+  color: white;
+  padding: 0 45px;
+  border: 2px solid white;
+  border-radius: 25px;
+  height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: .4s;
+}
+
+button:hover {
+  background-color:darkmagenta;
 }
