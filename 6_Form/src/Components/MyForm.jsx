@@ -10,6 +10,7 @@ const MyForm = () => {
   }
 
   console.log(name)
+  console.log(email)
   
   return (
     <div>
@@ -35,6 +36,7 @@ const MyForm = () => {
                 type="email" 
                 name='email' 
                 placeholder='Digite o seu email' 
+                onChange={(e) => setEmail(e.target.value)}
                 />
             </label>
             <input 
