@@ -62,9 +62,31 @@ function App() {
   } 
 
   const verifyLetter = (letter) => {
-    console.log(letter)
-  }
+    const normalizedLetter = letter.toLowerCase()
 
+    //check if letter has already been utilized
+    if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter))
+    {
+      return;
+    }
+
+    // push guessed letter or remove a guess
+    if (letters.includes(normalizedLetter)) {
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters,
+        normalizedLetter
+      ]);
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+        normalizedLetter,
+      ]);
+    }
+  };
+  
+  console.log(guessedLetters); 
+  console.log(wrongLetters); 
+  
   const retry = () => {
     setGameStage(stages[0].name)
   }
@@ -74,7 +96,8 @@ function App() {
       <div className='App'>      
         {gameStage === "start" && <StartScreen startGame={startGame}/>}
         {gameStage === "game" && 
-        (<Game 
+        (
+        <Game 
         verifyLetter={verifyLetter} 
         pickedWord={pickedWord} 
         pickedCategory={pickedCategory} 
@@ -83,7 +106,8 @@ function App() {
         wrongLetters={wrongLetters}
         guesses={guesses}
         score={score}
-        />)}
+        />
+        )}
         {gameStage === "end" && <GameOver retry={retry}/>}
       </div>
     </>
