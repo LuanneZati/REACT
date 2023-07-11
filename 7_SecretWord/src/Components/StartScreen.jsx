@@ -1,7 +1,7 @@
 import React from 'react'
 import './StartScreen.css'
  
-const StartScreen = ({startGame}) => {
+const GameStart  = ({startGame}) => {
   return (
     <div className='start'>
         <h1>Secret word</h1>
@@ -11,4 +11,4 @@ const StartScreen = ({startGame}) => {
   )
 }
 
-export default StartScreen
+export default GameStart
