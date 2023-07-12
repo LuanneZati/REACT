@@ -11,7 +11,7 @@ function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
   //Custom hook
-  const {data: items, httpConfig, loading} = useFetch(url)
+  const {data: items, httpConfig, loading, error} = useFetch(url)
 
   //Resgatando dados
   // useEffect(() => {
@@ -58,32 +58,35 @@ function App() {
       <h1>Lista de produtos</h1>
       {/* Loading */}
       {loading && <p>Carregando dados...</p>}
-      <ul>
-        {items && items.map((product) => (
-          <li key={product.id}>{product.name} - R${product.price}</li>
-        ))}
-      </ul>
-      <div className="add-product">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Nome: <input 
-            type="text" 
-            value={name} 
-            name="name" 
-            onChange={(e) => setName(e.target.value)} 
-            />
-          </label>
-          <label>
-            Preço: <input 
-            type="number" 
-            value={price} 
-            name="price" 
-            onChange={(e) => setPrice(e.target.value)} 
-            />
-          </label>
+      {error && <p>{error}</p>}
+      {!error && (
+        <ul>
+          {items && items.map((product) => (
+            <li key={product.id}>{product.name} - R${product.price}</li>
+          ))}
+        </ul>)
+        }
+        <div className="add-product">
+          <form onSubmit={handleSubmit}>
+            <label>
+              Nome: <input 
+              type="text" 
+              value={name} 
+              name="name" 
+              onChange={(e) => setName(e.target.value)} 
+              />
+            </label>
+            <label>
+              Preço: <input 
+              type="number" 
+              value={price} 
+              name="price" 
+              onChange={(e) => setPrice(e.target.value)} 
+              />
+            </label>
+            
           {/* state loading POST */}
-          {loading && <input type="disable" value="Aguarde" />}
-          {!loading && <input type="submit" value="Criar" />}
+          {loading ? <p>Aguarde!</p> : <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
