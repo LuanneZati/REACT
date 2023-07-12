@@ -11,7 +11,7 @@ function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
   //Custom hook
-  const {data: items, httpConfig} = useFetch(url)
+  const {data: items, httpConfig, loading} = useFetch(url)
 
   //Resgatando dados
   // useEffect(() => {
@@ -56,6 +56,8 @@ function App() {
   return (
     <div className="app">
       <h1>Lista de produtos</h1>
+      {/* Loading */}
+      {loading && <p>Carregando dados...</p>}
       <ul>
         {items && items.map((product) => (
           <li key={product.id}>{product.name} - R${product.price}</li>
@@ -79,7 +81,9 @@ function App() {
             onChange={(e) => setPrice(e.target.value)} 
             />
           </label>
-          <input type="submit" value="Criar" />
+          {/* state loading POST */}
+          {loading && <input type="disable" value="Aguarde" />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
