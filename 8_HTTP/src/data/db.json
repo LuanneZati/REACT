@@ -24,6 +24,36 @@
       "name": "Calça",
       "price": "50",
       "id": 5
+    },
+    {
+      "name": "Blusa",
+      "price": "10",
+      "id": 6
+    },
+    {
+      "name": "Vestido",
+      "price": "150",
+      "id": 7
+    },
+    {
+      "name": "Tiara",
+      "price": "20",
+      "id": 8
+    },
+    {
+      "name": "bolsa",
+      "price": "100",
+      "id": 10
+    },
+    {
+      "name": "Sapato",
+      "price": "250",
+      "id": 11
+    },
+    {
+      "name": "tenis",
+      "price": "250",
+      "id": 13
     }
   ]
 }
