@@ -2,12 +2,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-}
-
-h1 {
   display: flex;
   justify-content: center;
   margin: 15px;
   padding: 15px;
-  border: 1px solid;
 }
