@@ -3,13 +3,14 @@ import { useState } from 'react'
 //React router
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+//components
+import Navbar from './components/Navbar'
+
 //pages
 import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
-
-//components
-import Navbar from './components/Navbar'
+import Info from './pages/Info'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} ></Route>
           <Route path="/about" element={<About />} ></Route>
           <Route path="/products/:id" element={<Product />}></Route>
+          <Route path="/products/:id/info" element={<Info />}></Route>
         </Routes>
       </BrowserRouter>
      </div>
