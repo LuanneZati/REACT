@@ -15,6 +15,8 @@ const Home = () => {
           <li key={item.id}>
             <p>{item.name}</p>
             <p>R${item.price}</p>
+            {/* dynamic Route  */}
+            <Link to={`/products/${item.id}`}>Detalhes</Link>
           </li>
         ))}
       </ul>

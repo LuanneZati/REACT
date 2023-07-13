@@ -7,6 +7,7 @@ const Navbar = () => {
         {/* Channge components without redirection */}
         <Link to='/'>Home </Link>
         <Link to='/about'> Sobre</Link>
+        <Link to='/products'> Produto</Link>
     </nav>
   )
 }
