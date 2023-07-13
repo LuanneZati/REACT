@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 //React router
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 //components
 import Navbar from './components/Navbar'
@@ -28,6 +28,8 @@ function App() {
           <Route path="/products/:id" element={<Product />}></Route>
           <Route path="/products/:id/info" element={<Info />}></Route>
           <Route path="/search" element={<Search />}></Route>
+          {/* Redirecting */}
+          <Route path="/company" element={<Navigate to="/about" />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
