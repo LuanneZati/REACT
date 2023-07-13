@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
       "id": 2,
       "name": "Calça vermelha",
       "price": 90
@@ -21,11 +16,6 @@
       "id": 4
     },
     {
-      "name": "Calça",
-      "price": "50",
-      "id": 5
-    },
-    {
       "name": "Blusa",
       "price": "10",
       "id": 6
@@ -39,24 +29,6 @@
       "name": "Tiara",
       "price": "20",
       "id": 8
-    },
-    {
-      "name": "bolsa",
-      "price": "100",
-      "id": 10
-    },
-    {
-      "name": "Sapato",
-      "price": "250",
-      "id": 11
-    },
-    {
-      "name": "tenis",
-      "price": "250",
-      "id": 13
-    },
-    {
-      "id": 14
     }
   ]
 }

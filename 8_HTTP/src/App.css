@@ -58,3 +58,8 @@ form input {
   flex-direction: column;
   margin-bottom: 15px;
 }
+
+button {
+  background-color: blueviolet;
+  color: darkmagenta;
+}

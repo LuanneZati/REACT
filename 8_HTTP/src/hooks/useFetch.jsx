@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 //Custom hook
 
-export const useFetch = (url) => {
+export const useFetch = (url, items) => {
     const [data,setData] = useState(null);
 
     const [config, setConfig] = useState(null)
@@ -13,17 +13,30 @@ export const useFetch = (url) => {
     const[loading, setLoading] = useState(false);
     //try catch
     const [error,setError] = useState(null)
+    //url
+    const [itemId, setItemId] = useState(url)
 
     const httpConfig = (data, method) => {
         if(method === "POST")
         {
             setConfig({
                 method,
-                Headers: {
+                headers: {
                     "Content-type":"application/json",
                 },
                 body: JSON.stringify(data),
             });
+            setMethod(method);
+        }
+        else if(method === "DELETE")
+        {
+            setConfig({
+                method,
+                headers: {
+                    "Content-type":"application/json",
+                }
+            });
+            setItemId(data)
             setMethod(method);
         }
     };;
@@ -52,6 +65,15 @@ export const useFetch = (url) => {
             if(method === "POST")
             {
                 let fetchOptions = [url, config];
+                const res = await fetch(...fetchOptions);
+                const json = await res.json();
+                setCallFetch(json);
+            }
+            else if(method === "DELETE")
+            {
+                const deleteUrl = `${url}/${itemId}`;
+                let fetchOptions = [deleteUrl, config];
+                console.log(fetchOptions)
                 const res = await fetch(...fetchOptions);
                 const json = await res.json();
                 setCallFetch(json);

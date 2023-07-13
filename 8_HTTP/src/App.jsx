@@ -12,7 +12,7 @@ function App() {
   const [price, setPrice] = useState("")
   //Custom hook
   const {data: items, httpConfig, loading, error} = useFetch(url)
-
+  
   //Resgatando dados
   // useEffect(() => {
   //   async function fetchData() {
@@ -32,7 +32,7 @@ function App() {
       name,
       price
     }
-
+    
     // const res = await fetch(url, {
     //   method: "POST",
     //   headers: {
@@ -53,6 +53,16 @@ function App() {
     setPrice("")
   }
 
+  const handleDelete = async (id) => {
+    items && items.map((product) => {
+      if (product.id === id) {
+        console.log(product);
+        httpConfig(id, "DELETE");
+      }
+    });
+  };
+  
+
   return (
     <div className="app">
       <h1>Lista de produtos</h1>
@@ -62,7 +72,7 @@ function App() {
       {!error && (
         <ul>
           {items && items.map((product) => (
-            <li key={product.id}>{product.name} - R${product.price}</li>
+            <li key={product.id}>{product.name} - R${product.price} <button key={product.id} onClick={() => handleDelete(product.id)}>Deletar</button></li>
           ))}
         </ul>)
         }
@@ -84,9 +94,8 @@ function App() {
               onChange={(e) => setPrice(e.target.value)} 
               />
             </label>
-            
           {/* state loading POST */}
-          {loading ? <p>Aguarde!</p> : <input type="submit" value="Criar" />}
+          {loading ? <p>Aguarde!</p> : <button onClick={handleSubmit}>Criar</button>}
         </form>
       </div>
     </div>
