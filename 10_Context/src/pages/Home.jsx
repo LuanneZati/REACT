@@ -6,13 +6,20 @@ import ChangeCounter from '../components/ChangeCounter'
 // import { useContext } from 'react'
 import { useCounterContext } from '../hooks/useCounterContext'
 
+// Context more complex
+import { useTitleColorContext } from '../hooks/useTitleColorContext'
+
+
 const Home = () => {
   const url = "http://localhost:3000/products"
   const { counter } = useCounterContext();
   const {data: items, loading, error} = useFetch(url)
+  // Context more complex
+  const {color} = useTitleColorContext();
+
   return (
     <div>
-      <h1>Home</h1>
+      <h1 style={{color:color}}>Home</h1>
       <h2>Produtos</h2>
       {error && <p>{error}</p>}
       <ul className="products">
