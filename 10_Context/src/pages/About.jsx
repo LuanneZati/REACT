@@ -1,6 +1,7 @@
 import './About.css'
 import { useContext } from 'react'
 import { CounterContext } from '../context/CounterContext'
+import ChangeCounter from '../components/ChangeCounter'
 
 const About = () => {
   const { counter } = useContext(CounterContext);
@@ -8,6 +9,8 @@ const About = () => {
     <div>
       <h1>About</h1>
       <p>Valor do contador {counter}</p>
+      {/* alter context value */}
+      <ChangeCounter></ChangeCounter>
     </div>
   )
 }
