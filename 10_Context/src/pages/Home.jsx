@@ -2,12 +2,13 @@ import './Home.css'
 import {Link} from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
 import ChangeCounter from '../components/ChangeCounter'
-import { CounterContext } from '../context/CounterContext'
-import { useContext } from 'react'
+// import { CounterContext } from '../context/CounterContext'
+// import { useContext } from 'react'
+import { useCounterContext } from '../hooks/useCounterContext'
 
 const Home = () => {
   const url = "http://localhost:3000/products"
-  const { counter } = useContext(CounterContext);
+  const { counter } = useCounterContext();
   const {data: items, loading, error} = useFetch(url)
   return (
     <div>
