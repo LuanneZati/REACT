@@ -12,13 +12,25 @@
     </div>  
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script type="text/javascript">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
       // var newElement = document.createElement("h1");
       // newElement.innerText = "Olá mundo javascript + React";
-      var newElement = React.createElement("h1", {children: 'Olá mundo javascript + React'})
+      // var newElement = React.createElement("h1", {children: 'Olá mundo javascript + React'});
+      
+      //var newElement = <h1>Olá mundo javascript + React</h1>;
+      //var newElement2 = <h1>Testando</h1>;
       var rootElement = document.getElementById("root");
       //rootElement.appendChild(newElement);
-      ReactDOM.render(newElement, rootElement);
+      // ReactDOM.render(newElement, rootElement);
+      // ReactDOM.render(newElement2, rootElement);
+
+      // function Welcome(props) {
+      //   return <h1>Hello</h1>;
+      // }
+
+      const Welcome = (props) => <h1>{props.nome}</h1>
+      ReactDOM.render(<Welcome nome="Luanne"/>, rootElement);
     </script>
   </body>
 </html>
